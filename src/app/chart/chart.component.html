@@ -1,0 +1,15 @@
+<div class="chart">
+<div class="user-selection">
+    <label>Select User:</label>
+    <div class="user-buttons">
+        <button *ngFor="let user of users" (click)="onUserSelect(user.id)">
+            {{ user.name }}
+        </button>
+    </div>
+</div>
+
+<div style="display: block;" *ngIf="chartData && chartData.length > 0">
+    <ngx-charts-bar-vertical [view]="view" [scheme]="colorScheme" [results]="chartData" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [xAxisLabel]="xAxisLabel" [showYAxisLabel]="showYAxisLabel" [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-vertical>
+</div>
+</div>

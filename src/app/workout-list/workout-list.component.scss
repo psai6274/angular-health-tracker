@@ -1,0 +1,178 @@
+
+$breakpoint-alpha: 480px; // adjust to your needs
+
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.filter {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: black;
+
+    input {
+        width: 40%;
+        height: 50px;
+        border-style: none none solid none;
+        border-bottom: 3px solid black;
+        background-color: rgb(180, 180, 180);
+        font-size: medium;
+    }
+
+    select {
+        width: 40%;
+        height: 50px;
+        border-style: none none solid none;
+            border-bottom: 3px solid black;
+            background-color: rgb(180, 180, 180);
+            font-size: medium;
+    }
+
+}
+
+
+.table {
+    margin: 1em 0;
+    min-width: 100%; // adjust to your needs
+
+    tr {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+    }
+
+    td {
+        display: block;
+
+        &:first-child {
+            padding-top: .5em;
+        }
+
+        &:last-child {
+            padding-bottom: .5em;
+        }
+
+        &:before {
+            content: attr(data-th)": "; 
+            width: 6.5em; 
+            display: inline-block;
+            @media (min-width: $breakpoint-alpha) {
+                display: none;
+            }
+        }
+    }
+
+    th,
+    td {
+        text-align: left;
+
+        @media (min-width: $breakpoint-alpha) {
+            display: table-cell;
+            padding: .25em .5em;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+    }
+
+
+}
+
+
+// presentational styling
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+}
+// @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+body {
+    padding: 0 2em;
+    font-family: Montserrat, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: #444;
+    background: #eee;
+    
+}
+
+h1 {
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #34495E;
+}
+
+.table {
+    background: #34495E;
+    color: #fff;
+    border-radius: .4em;
+    overflow: hidden;
+
+    tr {
+        border-color: lighten(#34495E, 10%);
+    }
+
+    th,
+    td {
+        margin: .5em 1em;
+
+        @media (min-width: $breakpoint-alpha) {
+            padding: 1em !important;
+        }
+    }
+
+    th,
+    td:before {
+        color: #dd5;
+    }
+}
+
+.paging {
+    background-color: #34495E;
+    width: 400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+    margin-bottom: 20px;
+
+    button {
+        background-color: #34495E;
+        color: #fff;
+        padding: 5px;
+    }
+
+    select {
+    background-color: #34495E;
+    color: #fff;
+    }
+}
+
+.add-chart-button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #34495E;
+    border: none;
+    border-radius: 4px;
+    color: #dd5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+

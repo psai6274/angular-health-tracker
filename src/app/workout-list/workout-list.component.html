@@ -1,0 +1,49 @@
+<div class="page">
+<div class="filter">
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search by name..." (input)="applyFilters()">
+<select [(ngModel)]="selectedType" (change)="applyFilters()" >
+    <option value="">All Types</option>
+    <option *ngFor="let type of uniqueTypes" [value]="type">{{type}}</option>
+</select>
+
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Number of Workout</th>
+            <th>Minutes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of filteredUsers | paginate:{itemsPerPage: itemsPerPage, currentPage: currentPage}" >
+            <td>{{user.name}}</td>
+            <td>
+                <div *ngFor="let workout of user.workouts">
+                    {{ workout.type }}
+                </div> </td>
+            <td>{{user.workouts.length}}</td>
+            <td>
+                <div *ngFor="let workout of user.workouts">
+                    {{ workout.minutes }} mins
+                </div></td>
+                
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="totalPages > 1" class="paging">
+    <button (click)="prevPage()">Prev</button>
+    <span>{{currentPage }} / {{totalPages}}</span>
+    <button (click)="nextPage()">Next</button>
+
+    <label>Items Per Page:</label>
+<select [(ngModel)]="itemsPerPage" (change)="changeItemsPerPage(itemsPerPage)">
+    <option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }}</option>
+</select>
+
+</div>
+    <button type="button" class="add-chart-button" (click)="navigateToChart()">View Chart</button>
+
+</div>

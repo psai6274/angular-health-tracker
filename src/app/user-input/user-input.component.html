@@ -1,0 +1,30 @@
+
+<div class="input">
+    <div class="track-in">
+<form (submit)="onSubmit()" >
+    <div class="input-container">
+        <label for="name" class="floating-label">User Name*</label>
+        <input type="text" id="name" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" class="floating-input" required="true">
+    </div>
+    <div class="input-container">
+        <label for="type" class="floating-label">Workout Type:</label>
+        <select id="type" [(ngModel)]="workoutType" [ngModelOptions]="{standalone: true}" class="floating-input" required="true">
+            <option value="">Select...</option>
+            <option value="Running">Running</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Cycling">Swimming</option>
+            <option value="Cycling">Yoga</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+    <div class="input-container">
+        <label for="minutes" class="floating-label">Minutes:</label>
+        <input type="number" id="minutes" [(ngModel)]="workoutMinutes" [ngModelOptions]="{standalone: true}" class="floating-input" required="true">
+    </div>
+    
+    <button type="submit" class="add-workout-button">Add Workout</button>
+    <button type="button" class="add-workout-button" (click)="navigateToWorkoutList()">View Board</button>
+
+</form>
+</div>
+</div>

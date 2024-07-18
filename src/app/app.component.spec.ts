@@ -1,3 +1,5 @@
+// src/app/app.component.spec.ts
+
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -6,7 +8,7 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]) // Import RouterModule for router-outlet
       ],
       declarations: [
         AppComponent
@@ -26,10 +28,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('health-tracker');
   });
 
-  it('should render title', () => {
+  it('should render router-outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, health-tracker');
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });
