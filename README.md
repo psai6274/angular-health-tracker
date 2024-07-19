@@ -13,7 +13,6 @@ Health Tracker is a web application designed to help users manage their workouts
 ## Technologies Used
 
 - **Angular 14+**: For building the single-page application.
-- **Tailwind CSS**: For styling and responsive design.
 - **ngx-pagination**: For pagination functionality.
 - **ngx-charts**: For chart visualization.
 
