@@ -5,7 +5,7 @@ import { UserInputComponent } from './user-input/user-input.component';
 import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/workouts', pathMatch: 'full' },
+  { path: '', redirectTo: '/add-workout', pathMatch: 'full' },
   { path: 'workouts', component: WorkoutListComponent },
   { path: 'add-workout', component: UserInputComponent },
   { path: 'charts', component: ChartComponent },
