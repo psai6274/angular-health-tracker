@@ -4,6 +4,13 @@
 
 Health Tracker is a web application designed to help users manage their workouts and track their progress. The app allows users to input workout details, view a list of workouts, filter and search through the list, and visualize data using charts.
 
+## Live Demo
+
+Check out the live demo [here](https://angular-health-tracker.netlify.app/add-workout).
+
+  - Demo Data
+    To fully experience the application, you need to provide at least six workout inputs. This is necessary to populate the workout list and chart functionalities.
+
 ## Features
 
 - **User Input:** Add or update workout information with user names, workout types, and minutes.
